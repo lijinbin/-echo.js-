@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <title>使用echo.js实现图片懒加载</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "微软雅黑";
+      list-style: none;
+    }
+    ul{
+      width: 320px;
+      margin: 20px auto;
+    }
+    ul li{
+      width: 150px;
+      float: left;
+      margin-right: 20px;
+    }
+    ul li:nth-of-type(2n){
+      margin-right: 0;
+    }
+    ul li img {
+      display: block;
+      width: 150px;
+      height: 152px;
+      background: url(img/loading.gif) 50% no-repeat;
+    }
+    ul li p{
+      text-align: center;
+      height: 30px;
+      line-height: 30px;
+    }
+  </style>
+</head>
+<body>
+    <!-- 注意事项：最好给图片设置宽度和高度
+      img中src是起到占位的作用,指向默认加载图片路径 真正加载的图片是data-echo里面定义的 -->
+    <ul>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第1个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第2个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第3个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第4</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第5个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第6个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第7个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第8个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第9个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第10个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第11个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第12个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第13个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第14个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第15个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第16个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第17个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第18个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第19个</p>
+      </li>
+      <li>
+        <img src="img/blank.gif" data-echo="img/ig.jpg" />
+        <p>第20个</p>
+      </li>
+    </ul>
+    <script type="text/javascript" src="js/echo.js"></script>
+    <script>
+      echo.init({
+        offset: 0,//离可视区域多少像素的图片可以被加载
+        throttle: 0,//图片延时多少毫秒加载
+      });
+    </script>
+</body>
+</html>
